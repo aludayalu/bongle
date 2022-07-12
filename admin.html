@@ -1,0 +1,75 @@
+<html>
+  <style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
+  </style>
+  <body>
+<p><span id="uwu" style="color:white">First Word</span></p>
+  <p><textarea id="ir1" rows="4" cols="50"></textarea></p>
+  <p><span id="uwu" style="color:white">Second Word</span></p>
+  <p><textarea id="ir2" rows="4" cols="50"></textarea></p>
+  <p><span id="uwu" style="color:white">Third Word</span></p>
+  <p><textarea id="ir3" rows="4" cols="50"></textarea></p>
+  <p><span id="uwu" style="color:white">Forth Word</span></p>
+  <p><textarea id="ir4" rows="4" cols="50"></textarea></p>
+  <p><span id="uwu" style="color:white">Fifth Word</span></p>
+  <p><textarea id="ir5" rows="4" cols="50"></textarea></p>
+  <p><span id="uwu" style="color:white">Sixth Word</span></p>
+  <p><textarea id="ir6" rows="4" cols="50"></textarea></p>
+  <p><span id="uwu" style="color:white">Seventh Word</span></p>
+  <p><textarea id="ir7" rows="4" cols="50"></textarea></p>
+
+  <p><span id="uwu" style="color:white">Input Password Here</span></p>
+  <p><textarea id="inputpassword" rows="4" cols="50"></textarea></p>
+  <p><span id="uwu" style="color:white">Input Date Here</span></p>
+  <p><textarea id="inputdate" rows="4" cols="50"></textarea></p>
+  <p><button id="hard">upload</button></p>
+  </body>
+  <script>
+all=["ir1","ir2","ir3","ir4","ir5","ir6","ir7",]
+const element = document.getElementById("hard");
+element.addEventListener("click", parsefunc);
+var last=""
+function parsefunc() {
+  var puzarr=[]
+  for (text in all){
+    if (document.getElementById(all[text]).value.length>last.length){
+      puzarr.push(document.getElementById(all[text]).value);
+      last=document.getElementById(all[text]).value;
+    }else{
+      alert("Word not longer than previous!")
+      window.location.reload();
+    }
+}
+  var date=document.getElementById("inputdate").value;
+  var pass = document.getElementById("inputpassword").value;
+  puzarr.unshift(date)
+  puzarr.push(pass)
+  console.log(puzarr)
+window.location.href = ("/add?array="+JSON.stringify(puzarr));
+}
+</script>
+<style>
+  body {
+    top: 5%;
+    text-align: center;
+    position: relative; 
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+  }
+  @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+  </style>
+</html>
