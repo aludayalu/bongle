@@ -6,7 +6,7 @@ from joshua.router import Path
 from wsgiref.simple_server import make_server
 from aludbms import query
 import json
-port = 80
+port = 8080
 app = App()
 tomorrow=""
 today=""
