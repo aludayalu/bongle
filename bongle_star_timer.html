@@ -212,7 +212,7 @@ waitingCount -=1; //decrement counter
       console.log('requesting date');
       date=JSON.parse(httpGet("https://worldtimeapi.org/api/ip"))["datetime"].slice(0,10).replace("-","").replace("-","")
       console.log('requesting game');
-      game=(httpGet("http://127.0.0.1/puzzle?date="+date)); 
+      game=(httpGet("http://54.187.144.172/puzzle?date="+date)); 
       console.log('requested');
 	    sequence_list=JSON.parse(game)
     	var sequence_index=0 

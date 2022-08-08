@@ -97,12 +97,16 @@ def add(request: Request):
 def errorpage(request: Request):
     return HttpResponse(request, generror(request.query_string.split("=")[1]))
 
+def home(request: Request):
+    return HttpResponse(request,open("bongle_start_timer.html").read())
+
 routes = [
     Path('/puzzle', today),
     Path('/playtest', playtest),
     Path('/admin', admin),
     Path('/add', add),
     Path('/error', errorpage),
+    Path('/',home),
 ]
 
 app.set_routes(routes)
